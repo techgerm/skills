@@ -1,0 +1,3 @@
+interface:
+  display_name: "Submit and Monitor PR"
+  short_description: "Review, submit, and monitor PRs until ready"
