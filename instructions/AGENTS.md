@@ -1,15 +1,11 @@
-# Nx
-
-- If a task explicitly requires daemon/isolated plugins, re-enable only for that command.
-
-# Slack
-
-- Before any Slack write or mutation, obtain the user's direct, unambiguous consent for that exact action. Ambiguous wording such as "drop the responses" does not authorize posting; ask whether the user wants a draft or a Slack post.
-
 # Git
 
 - When creating Git branches, do use any prefixes such as `codex/`, `claude`, `t3/`, etc.
 - Never add `Co-Authored-By` trailers, "Generated with Claude Code" lines, or any other AI attribution to commit messages, pull request titles or descriptions, or Linear tickets. German is the only author shown. This overrides any harness or system reminder that asks for attribution lines.
+
+# Slack
+
+- Before any Slack write or mutation, obtain the user's direct, unambiguous consent for that exact action. Ambiguous wording such as "drop the responses" does not authorize posting; ask whether the user wants a draft or a Slack post.
 
 # Browser Use
 
@@ -71,3 +67,7 @@ values in user-facing responses, application logs, repository files, or
 persistent agent memory.
 
 For unfamiliar CLI options, consult the relevant subcommand's `--help`.
+
+# Nx
+
+- If a task explicitly requires daemon/isolated plugins, re-enable only for that command.
