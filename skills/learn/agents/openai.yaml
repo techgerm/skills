@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learn"
+  short_description: "Learn a subject in small, practical steps"
+  default_prompt: "Use $learn to teach me a subject step by step with concrete examples and understanding checks."
