@@ -1,6 +1,6 @@
 ---
 name: submit-and-monitor-pr
-description: Prepare current changes, complete independent local review, submit a PR through pr-new, and monitor CodeRabbit, Greptile, and required checks until the latest commit is ready.
+description: Prepare current changes, complete independent local review, submit a PR through pr-new, and monitor AI reviews, and required checks until the latest commit is ready. Use when the user invokes this skill.
 ---
 
 # Submit and Monitor PR
@@ -14,6 +14,8 @@ Identify the full proposed PR diff, including committed and uncommitted changes.
 Remove temporary artifacts, redundant code, and obsolete tests or markdown files introduced by this work. If there are tests that offer no real value then delete those as well. Preserve only useful regression coverage and documentation.
 
 Simplify the implementation where it preserves intended behavior and stays within the original scope. Validate any changes you make by following the repository’s validation instructions.
+
+If the changes are SQL based, ensure that all queries are optimized and indexes are used appropriately.
 
 ## 2. Complete independent local review
 
