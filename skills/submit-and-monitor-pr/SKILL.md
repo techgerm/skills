@@ -47,6 +47,7 @@ Fix only what's valid and apply minimal fixes only that address valid findings. 
 
 Commit and push the validated fixes. Reply to addressed AI threads with a concise explanation and resolve them after the fix is published.
 For rejected AI findings, reply with a specific written reason and resolve the thread.
+For AI findings posted outside a review thread, such as in a review summary, post one PR comment that gives each finding's disposition.
 
 After each pushed batch of fixes, post one `@greptile` comment to request another review. CodeRabbit should re-review automatically on push; verify that the expected review starts rather than repeatedly posting triggers.
 

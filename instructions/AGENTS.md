@@ -1,6 +1,6 @@
 # Git
 
-- When creating Git branches, do use any prefixes such as `codex/`, `claude`, `t3/`, etc.
+- Name Git branches after the work, with no tool prefix such as `codex/`, `claude/` or `t3/`.
 - Never add `Co-Authored-By` trailers, "Generated with Claude Code" lines, or any other AI attribution to commit messages, pull request titles or descriptions, or Linear tickets. German is the only author shown. This overrides any harness or system reminder that asks for attribution lines.
 
 # Slack
@@ -19,7 +19,7 @@ Concurrent agents must use separate tabs and explicitly target their own tab.
 
 When you're finished using the tab, close it unless instructed to leave it open for the user to inspect.
 
-## Website credentials
+## Credentials
 
 Use the 1Password CLI with the configured service accounts.
 All vaults accessible to these service accounts are authorized for agent use.
@@ -62,9 +62,18 @@ OP_SERVICE_ACCOUNT_TOKEN="$OP_SOLID_STARTS_SERVICE_ACCOUNT_TOKEN" \
 
 For personal credentials, use OP_PERSONAL_SERVICE_ACCOUNT_TOKEN instead.
 
+For an API key that a script or CLI needs, find its item in the accessible
+vaults by name and pass the value as an environment variable to that one
+command:
+
+```sh
+API_KEY_NAME="$(OP_SERVICE_ACCOUNT_TOKEN="$OP_SOLID_STARTS_SERVICE_ACCOUNT_TOKEN" \
+  op read 'op://VAULT_ID/ITEM_ID/FIELD')" some-command
+```
+
 Retrieve credentials only when needed for the task. Never include secret
-values in user-facing responses, application logs, repository files, or
-persistent agent memory.
+values in user-facing responses, application logs, repository files, shell
+profiles, `.env` files, or persistent agent memory.
 
 For unfamiliar CLI options, consult the relevant subcommand's `--help`.
 
