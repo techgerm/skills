@@ -7,6 +7,8 @@ description: Create or reuse a Linear ticket from the current work and open a ma
 
 Create a Linear ticket automatically unless the user provides an existing one, then open the pull request. If you're creating a new Linear ticket, do not ask the user for permission to create one.
 
+Use the GitHub CLI (`gh`) for GitHub operations in this skill. Create the PR noninteractively with `gh pr create --title ... --body-file ... --assignee @me`. Do not use the GitHub MCP PR creation tool, which opens a user-facing form. Continue using connected Linear tooling for tickets.
+
 ## Issue type classification
 
 This is only relevant when creating a new Linear ticket.
