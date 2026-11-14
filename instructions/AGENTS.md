@@ -7,6 +7,13 @@
 
 - Before any Slack write or mutation, obtain the user's direct, unambiguous consent for that exact action. Ambiguous wording such as "drop the responses" does not authorize posting; ask whether the user wants a draft or a Slack post.
 
+# Simulator and emulator cleanup
+
+- Keep device automation sessions open throughout the current testing sequence, including navigation, inputs, screenshots, and checks. Once that sequence is complete, release every session owned by the current thread before continuing unrelated work, sending a final response or handoff, or waiting for builds, reviews, or user input. Reopen a session if a later testing sequence needs the device again.
+- In T3 Code, run the session-bound `agent-device close`, then `device_close` with the device's `hostId`, `deviceId`, and `shutdown: false`. Keep the simulator or emulator booted unless the user requests shutdown.
+- Verify with `device_list` that this thread's `open` list is empty. Cleanup is part of completion, including failed tests and blocked work; use `finally` when scripting device operations.
+- Close only sessions owned by the current thread. If another thread owns a device, use an available device or request its release from the owner; never force-close another thread's session.
+
 # Browser Use
 
 For browser interaction, use a dedicated, persistent Chrome automation profile. Connect the chrome-devtools MCP server through `--browser-url`. Launch that Chrome instance with `--remote-debugging-port` bound to loopback and a separate, non-default `--user-data-dir`. Reuse the same automation profile across sessions so its logins persist. This setup avoids the connection approval prompt required by `--autoConnect`.
