@@ -18,7 +18,6 @@ The Skills CLI installs the shared files into `~/.agents/skills/` and creates sy
 - [quiz](skills/quiz/SKILL.md): Test knowledge one question at a time using any topic, source material, conversation, or previous Learn lesson. Works independently of Learn.
 - [pr-new](skills/pr-new/SKILL.md): Create or reuse a Linear ticket and open a GitHub pull request.
 - [submit-and-monitor-pr](skills/submit-and-monitor-pr/SKILL.md): Clean up changes, run independent local review, submit through `pr-new`, and monitor CodeRabbit, Greptile, and required checks.
-- [unslop](skills/unslop/SKILL.md): Remove AI writing patterns and make prose clearer and more natural.
 
 The PR workflows need GitHub access and connected Linear tooling. Independent review also needs a harness that can delegate to GPT 6.1-Sol at high reasoning effort.
 
@@ -71,7 +70,7 @@ Start new Codex and Claude sessions to load changed instructions. The Skills CLI
 Update just these skills:
 
 ```bash
-npx skills@latest update -g learn quiz pr-new submit-and-monitor-pr unslop
+npx skills@latest update -g learn quiz pr-new submit-and-monitor-pr
 ```
 
 To pick up newly added skills, run the install command again.

@@ -7,6 +7,10 @@
 
 - Before any Slack write or mutation, obtain the user's direct, unambiguous consent for that exact action. Ambiguous wording such as "drop the responses" does not authorize posting; ask whether the user wants a draft or a Slack post.
 
+# Email
+
+- Before any Email send action, obtain the user's direct, unambiguous consent for that exact action.
+
 # Simulator and emulator cleanup
 
 - Keep device automation sessions open throughout the current testing sequence, including navigation, inputs, screenshots, and checks. Once that sequence is complete, release every session owned by the current thread before continuing unrelated work, sending a final response or handoff, or waiting for builds, reviews, or user input. Reopen a session if a later testing sequence needs the device again.
@@ -87,3 +91,8 @@ For unfamiliar CLI options, consult the relevant subcommand's `--help`.
 # Nx
 
 - If a task explicitly requires daemon/isolated plugins, re-enable only for that command.
+
+# Command approvals
+
+- With Full Access, run authorized commands using default shell permissions and proceed without asking me to reconfirm.
+- Run `gh pr create` in its own shell call after preparing the PR description. If the runtime requires approval, identify the exact action and any reason it provides.
